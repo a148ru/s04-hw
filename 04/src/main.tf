@@ -24,7 +24,7 @@ module "vpc"{
   token = var.token
   instance_count = 1
   instance_name = var.names.0
-  subnet_id = var.vpc_subnet_id
+  subnet_id = module.vpc.vpc_subnet_id
   labels = { "department" = "${var.names.0}" }
   vms_ssh_root_key = local.vms_ssh_root_key
   cloudinit = data.template_file.cloudinit.rendered
@@ -37,7 +37,7 @@ module "analytic" {
   token = var.token
   instance_count = 1
   instance_name = var.names.1
-  subnet_id = var.vpc_subnet_id
+  subnet_id = module.vpc.vpc_subnet_id
   labels = { "department" = "${var.names.1}" }
   vms_ssh_root_key = local.vms_ssh_root_key
   cloudinit = data.template_file.cloudinit.rendered

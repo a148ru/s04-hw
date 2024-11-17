@@ -39,8 +39,8 @@ variable "names" {
     ]
 }
 
-variable "vpc_subnet_id" {
+/* variable "vpc_subnet_id" {
   type = string
 }
- 
+  */
 
