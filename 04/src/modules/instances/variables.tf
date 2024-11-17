@@ -55,11 +55,13 @@ variable vm_param {
       memory = 1,
       c_fract = 20
     })
+    description = "параметры вм"
 }
 
 variable "vm_preemptible" {
   type = bool
   default = true
+  description = "прерываемая вм"
 }
 
 variable "vms_ssh_port_enable" {

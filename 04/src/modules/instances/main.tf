@@ -1,3 +1,5 @@
+# module instances
+
 terraform {
   required_providers {
     yandex = {
@@ -48,7 +50,7 @@ resource "yandex_compute_instance" "vm_instance" {
     }
 
     metadata = {
-        user-data = var.cloudinit
+        user-data = var.cloudinit 
         serial-port-enable = 1
     }
 }

@@ -9,27 +9,27 @@ resource "yandex_vpc_subnet" "develop" {
 }
 
  module "marketing" {
-  source = "./modules/c-instance"
+  source = "./modules/instances"
   cloud_id = var.cloud_id
   folder_id = var.folder_id
   token = var.token
   instance_count = 1
-  instance_name = "market"
+  instance_name = var.names.0
   subnet_id = yandex_vpc_subnet.develop.id
-  labels = { "depart" = "marketing" }
+  labels = { "department" = "${var.names.0}" }
   vms_ssh_root_key = local.vms_ssh_root_key
   cloudinit = data.template_file.cloudinit.rendered
 }
 
 module "analytic" {
-  source = "./modules/c-instance"
+  source = "./modules/instances"
   cloud_id = var.cloud_id
   folder_id = var.folder_id
   token = var.token
   instance_count = 1
-  instance_name = "analytic"
+  instance_name = var.names.1
   subnet_id = yandex_vpc_subnet.develop.id
-  labels = { "depart" = "analytic" }
+  labels = { "department" = "${var.names.1}" }
   vms_ssh_root_key = local.vms_ssh_root_key
   cloudinit = data.template_file.cloudinit.rendered
 } 
