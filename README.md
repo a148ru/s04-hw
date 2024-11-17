@@ -34,10 +34,23 @@
 
 тут я не понял почему предлагает изменить labels и name
 
-![alt text](image-10.png)
 
 ![alt text](image-9.png)
 
-![alt text](image-11.png)
+![alt text](image-10.png)
+
+```terraform apply``` (
+![alt text](image-12.png)
+
+удалил и создал по новой 
+
+```sh
+
+$ terraform destroy -target="module.marketing.yandex_compute_instance.vm_instance[0]"
+$ terraform destroy -target="module.analytic.yandex_compute_instance.vm_instance[0]"
+$ terraform plan
+$ terraform apply
+```
+![alt text](image-13.png)
 
 ### Задание 4
