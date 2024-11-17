@@ -43,3 +43,15 @@ module "analytic" {
   cloudinit = data.template_file.cloudinit.rendered
 } 
 
+module "vpc_new" {
+  source = "./modules/vpc_new"
+  env_name = "production"
+  token = var.token
+  cloud_id = var.cloud_id
+  folder_id = var.folder_id
+  subnets = [
+    { zone = "ru-central1-a", cidr = "172.16.1.0/24" },
+    { zone = "ru-central1-b", cidr = "172.16.2.0/24" },
+    { zone = "ru-central1-d", cidr = "172.16.3.0/24" },
+  ]
+}
