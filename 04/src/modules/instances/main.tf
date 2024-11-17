@@ -9,12 +9,6 @@ terraform {
   required_version = "~>1.8.4"
 }
 
-provider "yandex" {
-  token     = var.token
-  cloud_id  = var.cloud_id
-  folder_id = var.folder_id
-  zone      = var.default_zone
-}
 
 data "yandex_compute_image" "os_image" {
     family = var.image_id

@@ -3,6 +3,6 @@
 }
  */
 
- output "vpc_new" {
+/*  output "vpc_new" {
    value = module.vpc_new.vpc_subnet
- }
+ } */
