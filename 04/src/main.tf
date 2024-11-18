@@ -34,4 +34,4 @@ module "vpc_new" {
     { zone = "ru-central1-b", cidr = "172.16.2.0/24" },
     { zone = "ru-central1-d", cidr = "172.16.3.0/24" },
   ]
-}
+} 

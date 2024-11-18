@@ -20,4 +20,4 @@ personal.auto.tfvars
 04/hw-04.md
 04/demonstration1/*
 04/demonstration3/*
-04/src/modules/cluster-mysql
+#04/src/modules/cluster-mysql
