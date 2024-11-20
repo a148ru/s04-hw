@@ -4,8 +4,9 @@ module "vpc"{
   default_cidr = var.default_cidr
 }
 
- module "marketing" {
-  source = "./modules/instances"
+
+module "marketing" {
+  source = "git::https://github.com/a148ru/yandex-cloud-vm.git"
   folder_id = var.folder_id
   instance_count = 1
   instance_name = var.names.0
@@ -16,7 +17,7 @@ module "vpc"{
 }
 
 module "analytic" {
-  source = "./modules/instances"
+  source = "git::https://github.com/a148ru/yandex-cloud-vm.git"
   folder_id = var.folder_id
   instance_count = 1
   instance_name = var.names.1
